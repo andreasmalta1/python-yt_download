@@ -18,7 +18,7 @@ def download_adaptive_stream(yt, link):
     video_stream = ffmpeg.input('video.mp4')
     audio_stream = ffmpeg.input('audio.mp4')
 
-    ffmpeg.output(audio_stream, video_stream, 'out.mp4').run(loglevel="quiet")
+    ffmpeg.output(audio_stream, video_stream, 'out.mp4', loglevel="quiet").run()
     os.rename('out.mp4', yt.title + '.mp4')
     os.remove('audio.mp4')
     os.remove('video.mp4')
